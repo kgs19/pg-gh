@@ -14,5 +14,5 @@ func greetingDim() string {
 
 func main() {
 	fmt.Println(greeting())
+	fmt.Println(greetingDim())
 }
-∏
