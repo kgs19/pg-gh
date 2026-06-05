@@ -12,6 +12,12 @@ func greetingDim() string {
 	return "Hello, Dim!"
 }
 
+// create an other greeting function to say hello to Jason
+func greetingJason() string {
+	return "Hello, Jason!"
+}	
+
+
 func main() {
 	fmt.Println(greeting())
 	fmt.Println(greetingDim())
