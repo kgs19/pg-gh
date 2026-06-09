@@ -1,0 +1,23 @@
+name: Dependency Review
+
+on:
+  # Run only for pull requests so dependency risk is checked before merge.
+  pull_request:
+    types: ["opened", "synchronize", "reopened"]
+  push:
+    branches: [ "main" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Least-privilege permissions for this workflow.
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    steps:
+      # Official GitHub action that flags vulnerable or risky dependency changes.
+      - name: Review dependencies
+        uses: actions/dependency-review-action@v4
