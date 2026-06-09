@@ -4,10 +4,6 @@ on:
   # Run only for pull requests so dependency risk is checked before merge.
   pull_request:
     types: ["opened", "synchronize", "reopened"]
-  push:
-    branches: [ "main" ]
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # Least-privilege permissions for this workflow.
 permissions:
