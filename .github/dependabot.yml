@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "tuesday"
-      time: "15:41"
+      time: "19:41"
       timezone: "UTC"
 
     open-pull-requests-limit: 10
