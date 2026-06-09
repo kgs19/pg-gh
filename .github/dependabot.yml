@@ -1,0 +1,78 @@
+version: 2
+
+updates:
+
+  #
+  # Gradle dependencies
+  #
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "UTC"
+
+    open-pull-requests-limit: 10
+
+    commit-message:
+      prefix: "deps"
+
+    labels:
+      - dependencies
+      - java
+
+    groups:
+      gradle-patch-minor:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+
+      gradle-dev-dependencies:
+        dependency-type: "development"
+
+  #
+  # GitHub Actions
+  #
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:30"
+      timezone: "UTC"
+
+    open-pull-requests-limit: 5
+
+    commit-message:
+      prefix: "ci"
+
+    labels:
+      - dependencies
+      - github-actions
+
+  #
+  # Dockerfiles
+  #
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "UTC"
+
+    open-pull-requests-limit: 5
+
+    commit-message:
+      prefix: "docker"
+
+    labels:
+      - dependencies
+      - docker
+
+    groups:
+      docker-base-images:
+        patterns:
+          - "*"
