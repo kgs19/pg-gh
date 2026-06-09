@@ -60,7 +60,7 @@ updates:
   # Dockerfiles
   #
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/iot-c/collector-a-to-c"
     schedule:
       interval: "weekly"
       day: "monday"
