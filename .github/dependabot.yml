@@ -6,17 +6,17 @@ updates:
   # Gradle dependencies
   #
   - package-ecosystem: "gradle"
-    directory: "/"
+    directory: "/iot-c"
     schedule:
       interval: "weekly"
       day: "tuesday"
-      time: "15:32"
+      time: "15:41"
       timezone: "UTC"
 
     open-pull-requests-limit: 10
 
     commit-message:
-      prefix: "deps"
+      prefix: "dep-gradle"
 
     labels:
       - dependencies
@@ -46,7 +46,7 @@ updates:
     open-pull-requests-limit: 5
 
     commit-message:
-      prefix: "ci"
+      prefix: "dep-github-actions"
 
     labels:
       - dependencies
@@ -66,7 +66,7 @@ updates:
     open-pull-requests-limit: 5
 
     commit-message:
-      prefix: "docker"
+      prefix: "dep-docker"
 
     labels:
       - dependencies
