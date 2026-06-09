@@ -20,3 +20,9 @@ jobs:
           java-version: 17
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v6
+        with:
+          # Use a particular Gradle version instead of the configured wrapper.
+          gradle-version: '8.7'
+
+          # The gradle project is not in the root of the repository.
+          build-root-directory: iot-c
