@@ -9,8 +9,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "Tuesday"
-      time: "15:29"
+      day: "tuesday"
+      time: "15:32"
       timezone: "UTC"
 
     open-pull-requests-limit: 10
