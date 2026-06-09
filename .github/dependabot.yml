@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "tuesday"
-      time: "16:28"
+      time: "16:38"
       timezone: "UTC"
 
     open-pull-requests-limit: 10
@@ -59,15 +59,19 @@ updates:
       - java
 
     groups:
-      gradle-patch-minor:
-        dependency-type: "production"
-        update-types:
-          - "minor"
-          - "patch"
+      spring:
+        patterns:
+          - "org.springframework*"
+          - "org.springframework.boot*"
 
-      gradle-dev-dependencies:
-        dependency-type: "development"
+      aws:
+        patterns:
+          - "software.amazon.awssdk*"
 
+      test:
+        patterns:
+          - "org.junit*"
+          - "org.mockito*"
   #
   # GitHub Actions
   #

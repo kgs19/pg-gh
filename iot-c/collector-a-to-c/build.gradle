@@ -1,9 +1,9 @@
 plugins {
 	id "java"
 	id "idea"
-	id "org.springframework.boot" version "${springBootVersion}"
-	id "io.spring.dependency-management" version "${springDepMgmVersion}"
-	id "com.palantir.docker" version "${palantirDockerVersion}"
+	id "org.springframework.boot" version "3.2.5"
+	id "io.spring.dependency-management" version "1.1.4"
+	id "com.palantir.docker" version "0.36.0"
 }
 
 def iotcTAG = findProperty('IOTC_TAG') ?: 'latest'
@@ -35,5 +35,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation(project(":common"))
+
+	implementation(group: 'commons-io', name: 'commons-io', version: '2.19.0')
 
 }
