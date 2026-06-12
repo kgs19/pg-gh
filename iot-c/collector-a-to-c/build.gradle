@@ -36,6 +36,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation(project(":common"))
 
-	implementation("commons-io:commons-io:2.21.0")
+	implementation(group: 'commons-io', name: 'commons-io', version: '2.19.0')
+//	implementation("commons-io:commons-io:2.21.0")
+
 
 }
