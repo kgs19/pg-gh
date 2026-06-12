@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
-      time: "12:20"
+      time: "15:20"
       timezone: "UTC"
 
     open-pull-requests-limit: 10
@@ -44,7 +44,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
-      time: "12:20"
+      time: "15:20"
       timezone: "UTC"
 
     open-pull-requests-limit: 5
@@ -64,7 +64,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
-      time: "12:20"
+      time: "15:20"
       timezone: "UTC"
 
     open-pull-requests-limit: 5
