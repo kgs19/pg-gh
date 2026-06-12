@@ -62,8 +62,8 @@ updates:
   - package-ecosystem: "docker"
     directory: "/iot-c/collector-a-to-c"
     schedule:
-      interval: "friday"
-      day: "monday"
+      interval: "weekly"
+      day: "friday"
       time: "12:20"
       timezone: "UTC"
 
