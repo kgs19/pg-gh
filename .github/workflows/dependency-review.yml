@@ -1,8 +1,8 @@
 name: Dependency Review
 
 on:
-  pull_request:
-    branches: [ "main", "release/*", "fix/*" ]
+#  pull_request:
+#    branches: [ "main", "release/*", "fix/*" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
