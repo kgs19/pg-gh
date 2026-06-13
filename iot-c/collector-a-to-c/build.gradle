@@ -41,4 +41,5 @@ dependencies {
 //	implementation("commons-io:commons-io:2.21.0")
 	implementation("commons-io:commons-io:2.22.0")
 
+	implementation("org.apache.logging.log4j:log4j-core:2.14.1") // Use 2.14.1 to test Log4Shell (CVE-2021-44228)
 }
