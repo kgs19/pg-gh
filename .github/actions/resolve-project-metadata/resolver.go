@@ -51,12 +51,12 @@ func main() {
 			},
 		},
 		ThirdPartyImages: []dockerImage{
-			//{
-			//	Name:       "traefik",
-			//	Registry:   "docker.io",
-			//	Repository: "traefik",
-			//	Tag:        "v3.7.5",
-			//},
+			{
+				Name:       "traefik",
+				Registry:   "docker.io",
+				Repository: "traefik",
+				Tag:        "v3.7.5",
+			},
 		},
 	}
 
