@@ -13,39 +13,9 @@ This action only computes metadata and writes outputs:
 It does **not** build, push, scan, or release anything.
 
 ## Inputs
-
+- `github-output-file` (optional, default: none) - if provided, the action writes outputs to this file in GitHub Actions format.
 - `version-file` (default: `version.properties`)
 
-## Outputs
-
-- `version`: Example `18.1.1-B12345`
-- `java_images`: Example
-
-```json
-[
-  { "name": "data-access", "registry": "ghcr.io", "repository": "adtran-osa/nc-synca/gnss-data-access", "tag": "18.1.1-B12345" },
-  { "name": "gnss-cli-worker", "registry": "ghcr.io", "repository": "adtran-osa/nc-synca/gnss-cli-worker", "tag": "18.1.1-B12345" }
-]
-```
-
-- `third_party_images`: Example
-
-```json
-[
-  {
-    "name": "kafka",
-    "registry": "ghcr.io",
-    "repository": "adtran-osa/nc/3rd-party/apache-kafka",
-    "tag": "4.2.0-alpine"
-  },
-  {
-    "name": "traefik",
-    "registry": "ghcr.io",
-    "repository": "adtran-osa/nc/3rd-party/traefik",
-    "tag": "v3.6.10"
-  }
-]
-```
 
 ## Resolver Interface (Go)
 
@@ -57,27 +27,32 @@ go run . \
   --version-file ../../../version.properties 
 ```
 
+## Outputs
 Without `--github-output-file`, the resolver prints a JSON document:
 
 ```json
 {
-  "version": "18.1.1-B19301",
+  "version": "latest",
   "java_images": [
-    { "name": "data-access", "registry": "ghcr.io", "repository": "adtran-osa/nc-synca/gnss-data-access", "tag": "18.1.1-B19301" },
-    { "name": "gnss-cli-worker", "registry": "ghcr.io", "repository": "adtran-osa/nc-synca/gnss-cli-worker", "tag": "18.1.1-B19301" }
+    {
+      "name": "iot-collector",
+      "registry": "docker.io",
+      "repository": "dgs19/iot-collector",
+      "tag": "latest"
+    },
+    {
+      "name": "iot-collector-ui",
+      "registry": "docker.io",
+      "repository": "dgs19/iot-collector-ui",
+      "tag": "latest"
+    }
   ],
   "third_party_images": [
     {
-      "name": "kafka",
-      "registry": "ghcr.io",
-      "repository": "adtran-osa/nc/3rd-party/apache-kafka",
-      "tag": "4.2.0-alpine"
-    },
-    {
       "name": "traefik",
-      "registry": "ghcr.io",
-      "repository": "adtran-osa/nc/3rd-party/traefik",
-      "tag": "v3.6.10"
+      "registry": "docker.io",
+      "repository": "traefik",
+      "tag": "v3.7.5"
     }
   ]
 }

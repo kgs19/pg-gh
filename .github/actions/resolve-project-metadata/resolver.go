@@ -24,15 +24,15 @@ type metadata struct {
 }
 
 func main() {
-	//versionFile := flag.String("version-file", "version.properties", "Relative path to version.properties")
+	versionFile := flag.String("version-file", "version.properties", "Relative path to version.properties")
 	githubOutputFile := flag.String("github-output-file", "", "Path to GITHUB_OUTPUT")
 	flag.Parse()
 
-	//version, err := computeVersion(*versionFile)
+	version, err := computeVersion(*versionFile)
 	// TODO remove hardcoded value
 	fmt.Println("WARNING: Using hardcoded version value for offline build")
-	version := "latest"
-	//fatalIfErr(err)
+	version = "latest"
+	fatalIfErr(err)
 
 	out := metadata{
 		Version: version,
