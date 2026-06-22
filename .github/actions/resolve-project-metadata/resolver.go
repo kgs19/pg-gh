@@ -43,20 +43,20 @@ func main() {
 				Repository: "dgs19/iot-collector",
 				Tag:        version,
 			},
-			{
-				Name:       "iot-collector-ui",
-				Registry:   "docker.io",
-				Repository: "dgs19/iot-collector-ui",
-				Tag:        version,
-			},
+			//{
+			//	Name:       "iot-collector-ui",
+			//	Registry:   "docker.io",
+			//	Repository: "dgs19/iot-collector-ui",
+			//	Tag:        version,
+			//},
 		},
 		ThirdPartyImages: []dockerImage{
-			{
-				Name:       "traefik",
-				Registry:   "docker.io",
-				Repository: "traefik",
-				Tag:        "v3.7.5",
-			},
+			//{
+			//	Name:       "traefik",
+			//	Registry:   "docker.io",
+			//	Repository: "traefik",
+			//	Tag:        "v3.7.5",
+			//},
 		},
 	}
 
