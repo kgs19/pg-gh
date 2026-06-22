@@ -1,0 +1,31 @@
+name: resolve-project-metadata
+description: Resolve project release metadata (version, Java image matrix, and 3rd-party images) without building artifacts.
+
+outputs:
+  version:
+    description: Computed NMS_TAG version string, for example 18.1.1-B12345.
+    value: ${{ steps.resolve.outputs.version }}
+  java_images:
+    description: JSON array of objects in the form [{"name":"...","registry":"...","repository":"...","tag":"..."}] suitable for matrix.include.
+    value: ${{ steps.resolve.outputs.java_images }}
+  third_party_images:
+    description: JSON array of 3rd-party image objects in the form [{"name":"...","registry":"...","repository":"...","tag":"..."}] suitable for fromJson() matrix consumption.
+    value: ${{ steps.resolve.outputs.third_party_images }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Go
+      uses: actions/setup-go@v6
+      with:
+        go-version: 1.25.x
+
+    - name: Resolve metadata outputs
+      id: resolve
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: |
+        go run . \
+          --version-file "${GITHUB_WORKSPACE}/version.properties"  \
+          --github-output-file "$GITHUB_OUTPUT"
+
