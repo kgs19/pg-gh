@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout Repository'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       # Official GitHub action that flags vulnerable or risky dependency changes.
       - name: Review dependencies
         uses: actions/dependency-review-action@v4
