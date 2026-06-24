@@ -1,7 +1,11 @@
 name: github-script-hw
 on:
-  issues:
-    types: [opened]
+## Uncomment the following to enable it
+#  issues:
+#    types: [opened]
+
+##
+  workflow_dispatch:
 
 permissions:
   issues: write
